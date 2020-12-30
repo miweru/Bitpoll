@@ -118,7 +118,6 @@ class Command(BaseCommand):
             elif isinstance(owner, Group):
                 # group owner
                 migrated_poll.group = owner
-            
             migrated_poll.save()
             migrated_poll.created = _fix_timezone(poll['created'], timezone)
             migrated_poll.save()

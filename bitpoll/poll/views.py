@@ -242,7 +242,7 @@ def comment(request, poll_url, comment_id=None):
                     else:
                         form.add_error('name', _("Provide a name"))
                 else:
-                    form.add_error('spam_answer', "Wrong result")
+                    form.add_error('spam_answer', _("Wrong result"))
             except token_bucket.TokensExceeded as e:
                 form.add_error(None, e)
                 spam_challenge = get_spam_challenge_from_key(form.cleaned_data['spam_key'], current_poll.id)
