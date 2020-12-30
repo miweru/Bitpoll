@@ -51,6 +51,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=80)),
+                ('spam', models.CharField(max_length=80)),
                 ('description', models.TextField(blank=True)),
                 ('url', models.SlugField(max_length=80, unique=True)),
                 ('type', models.CharField(choices=[('universal', 'Universal'), ('datetime', 'Date-Time'), ('date', 'Date')], default='universal', max_length=20)),

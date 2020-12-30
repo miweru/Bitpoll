@@ -16,6 +16,7 @@
         var $randomSlug, $randomizeButton, $slugInput, $title, update, updateRandom, updateRandomSlug, updateTitle;
         $randomizeButton = $('#slug-randomize');
         $title = $('#title-input');
+        $spam = $('#spam-input');
         $slugInput = $('#slug-input');
         $randomSlug = $('#random_slug');
 

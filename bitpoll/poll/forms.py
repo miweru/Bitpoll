@@ -8,6 +8,7 @@ class PollCreationForm(ModelForm):
         model = Poll
         fields = [
             'title',
+            "spam",
             'type',
             'public_listening',
             'due_date',

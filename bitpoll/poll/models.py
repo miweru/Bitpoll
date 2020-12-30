@@ -37,6 +37,7 @@ POLL_RESULTS = (
 
 class Poll(models.Model):
     title = models.CharField(max_length=80)
+    spam = models.CharField(max_length=80)
     description = models.TextField(blank=True)
     url = models.SlugField(max_length=80, unique=True)
     type = models.CharField(max_length=20, choices=POLL_TYPES)
@@ -319,7 +320,7 @@ class Vote(models.Model):
         if user.is_anonymous:
             return False
         return self.can_edit(user)
-    
+
     @property
     def display_name(self) -> str:
         """Name of user if assigned, name field or anonymous else."""

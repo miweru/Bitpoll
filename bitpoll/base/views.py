@@ -45,9 +45,13 @@ def index(request):
         post_data = request.POST.copy()
         if randomize_url and request.POST.get('url', '') == '':
             post_data['url'] = generate_random_slug()
+        #print(post_data)
         form = PollCreationForm(post_data)
+        if post_data["spam"].strip().lower()!="alexander":
+            form.add_error('spam', "Wrong result")
         if form.is_valid():
             current_poll = form.save()
+            print(current_poll)
             if request.user.is_authenticated:
                 current_poll.user = request.user
                 current_poll.save()
